@@ -6,6 +6,10 @@ There is no separate external AI backend required: as long as Codex is installed
 
 Before running the project on a new machine, copy and adapt your `.env` file (Google OAuth IDs, DB path, IDA MCP paths/host/port, and category prompts) to match the local environment.
 
+## Demo
+
+[![AUTOCTF Demo](https://img.youtube.com/vi/-B22EIE1_DQ/0.jpg)](https://youtu.be/-B22EIE1_DQ)
+
 ## Installation
 
 ```bash

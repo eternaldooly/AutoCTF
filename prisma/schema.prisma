@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Competition {
+  id           String    @id @default(cuid())
+  name         String
+  description  String?
+  ctfUrl       String?
+  databaseName String?
+  apiKey       String?
+  ownerEmail   String    @default("unowned")
+  ownerName    String?
+  isShared     Boolean   @default(false)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  problems     Problem[]
+
+  @@index([ownerEmail])
+}
+
+model Problem {
+  id               String      @id @default(cuid())
+  title            String
+  description      String
+  category         String
+  difficulty       String
+  points           Int         @default(0)
+  hintsRaw         String?     @map("hints")
+  filesRaw         String?     @map("files")
+  solved           Boolean     @default(false)
+  source           String?
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+  competitionId    String
+  flag             String?
+  writeup          String?
+  writeupUpdatedAt DateTime?
+  competition      Competition @relation(fields: [competitionId], references: [id], onDelete: Cascade)
+}

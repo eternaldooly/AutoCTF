@@ -8,7 +8,7 @@ Before running the project on a new machine, copy and adapt your `.env` file (Go
 
 ## Demo
 
-[![AUTOCTF Demo](https://img.youtube.com/vi/-B22EIE1_DQ/0.jpg)](https://youtu.be/-B22EIE1_DQ)
+https://github.com/eternaldooly/AUTOCTF/issues/1#issue-3742783788
 
 ## Installation
 
